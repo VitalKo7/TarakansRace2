@@ -7,15 +7,15 @@ public class Tarakan implements Runnable {
     int runCycles;
     int sleepTime;
 
-    public Tarakan(String tarakanNumber, int runCycles, int sleepTime) {
-        this.tarakanName = tarakanNumber;
+    public Tarakan(String tarakanName, int runCycles, int sleepTime) {
+        this.tarakanName = tarakanName;
         this.runCycles = runCycles;
         this.sleepTime = sleepTime;
     }
 
     @Override
     public void run() {
-        System.out.println("Tarakan #" + tarakanName + " is running");
+        System.out.println("Tarakan #" + tarakanName + " is running. In Thread #" + Thread.currentThread().getName());
 
         for (int i = 0; i < runCycles; i++) {
             System.out.println("Tarakan #" + tarakanName + " is running round number " + (i + 1));
